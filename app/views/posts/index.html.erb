@@ -1,7 +1,13 @@
-<h1>Welcome !</h1>
+<div>
+<% @posts.each do |post| %>
+    <p>
+    <tr>
+      <h1><td><%= post.user.email %></td></h1>
+      <h2><td><%= post.body %></td></h2>
+      <h3><td><%= post.created_at %></td></h3>
+    </tr>
+  <% end %>
+  </p>
+</div>
 
-<p>
-<%= @user %>
-</p>
-
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<%= link_to 'New Post', new_post_path(@user) %>
