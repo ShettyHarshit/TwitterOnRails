@@ -5,6 +5,9 @@
       <h1><td><%= post.user.email %></td></h1>
       <h2><td><%= post.body %></td></h2>
       <h3><td><%= post.created_at %></td></h3>
+      <% if current_user == post.user %>
+        <%= link_to "Delete", post_path(post.id), :confirm => "Are you sure?", :method => :delete %>
+      <% end %>
     </tr>
   <% end %>
   </p>
