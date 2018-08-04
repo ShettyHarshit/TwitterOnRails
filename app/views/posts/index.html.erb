@@ -2,15 +2,18 @@
 <% @posts.each do |post| %>
     <p>
     <tr>
-      <h1><td><%= post.user.email %></td></h1>
+    <div  class="tweet">
+      <h3><td><%= post.user.email %></td></h3>
       <h2><td><%= post.body %></td></h2>
       <h3><td><%= post.created_at %></td></h3>
       <% if current_user == post.user %>
-        <%= link_to "Delete", post_path(post.id), :confirm => "Are you sure?", :method => :delete %>
+        <span class="twitter-button">
+            <%= link_to "Delete", post_path(post.id), :confirm => "Are you sure?", :method => :delete %>
+            </span>
       <% end %>
+      </div>
     </tr>
   <% end %>
   </p>
 </div>
 
-<%= link_to 'New Post', new_post_path(@user) %>
