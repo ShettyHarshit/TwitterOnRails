@@ -43,6 +43,7 @@ a {
     text-decoration: none !important;
     color: #fff !important;
 }
+
 input[type=submit]{
     background-color: #62A9E0;
     border-color: transparent;
@@ -77,6 +78,10 @@ input[type=text]{
     padding: 15px;
     margin: -10px;
     font-size: 18px;
+ }
+
+ .tweet a{
+     color: #000 !important;
  }
 
  .tweet{

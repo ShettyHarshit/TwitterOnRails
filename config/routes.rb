@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   
   devise_for :users
   
-  resources :posts
+  resources :posts do
+  end
+  
   resources :users do
+    get 'profile'
   end
 
 end
