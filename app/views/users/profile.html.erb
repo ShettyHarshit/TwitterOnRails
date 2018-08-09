@@ -5,7 +5,7 @@
 
 <div>
 <% @posts.reverse.each do |post| %>
-  <% if current_user == post.user %>
+  <% if @userinfo == post.user %>
     <p>
       <tr>
         <div  class="tweet">
