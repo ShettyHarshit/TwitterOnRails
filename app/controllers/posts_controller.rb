@@ -24,6 +24,18 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to '/'
   end
+  
+  def like
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    redirect_to '/'
+  end
+  
+  def dislike
+    @post = Post.find(params[:id])
+    @post.disliked_by current_user
+    redirect_to '/'
+  end
 
   private
     def post_params
