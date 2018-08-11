@@ -22,19 +22,19 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to '/'
+    redirect_back(fallback_location: root_path)
   end
   
   def like
     @post = Post.find(params[:id])
     @post.liked_by current_user
-    redirect_to '/'
+    redirect_back(fallback_location: root_path)
   end
   
   def dislike
     @post = Post.find(params[:id])
     @post.disliked_by current_user
-    redirect_to '/'
+    redirect_back(fallback_location: root_path)
   end
 
   private
