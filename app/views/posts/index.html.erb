@@ -3,7 +3,7 @@
     <p>
     <tr>
     <div  class="tweet">
-    <h3 class="black"><td><%= link_to post.user.email, user_profile_path(post.user) %></td></h3>
+    <h3 class="black"><td><%= link_to post.user.username, user_profile_path(post.user) %></td></h3>
     <h2><td><%= post.body %></td></h2>
     <h3><td><%= post.created_at %></td></h3>
     
